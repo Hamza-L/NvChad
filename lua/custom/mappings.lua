@@ -1,7 +1,16 @@
 local M = {}
 
-M.dap = {
-  plugin = true,
+
+M.disabled = {
+  n = {
+    ["<leader>ra"] = "", -- LSP - rename
+    ["<leader>rh"] = "", -- reset hunk
+    ["<leader>rn"] = "", -- toggle relative number 
+    ["<leader>/"] = "", -- comment line 
+  }
+}
+
+M.dap = { plugin = true,
   n = {
     ["<leader>db"] = {
       "<cmd> DapToggleBreakpoint <CR>",
@@ -60,6 +69,20 @@ M.doomKeyMaps= {
     ["<leader>wv"] = {
       "<C-w>wv",
       "window split vertically"
+    },
+    ["<leader>pf"] = {
+      "<cmd>lua require('fzf-lua').files()<CR>", "fzf search", { silent = true }
+    },
+    ["<leader>/"] = {
+      "<cmd>lua require('fzf-lua').live_grep()<CR>", "grep search", { silent = true }
+    },
+    ["<leader>r"] = {
+      "<cmd>lua require('fzf-lua').lsp_references()<CR>", "lsp - reference search", { silent = true }
+    },
+  },
+  v = {
+    ["<leader>/"] = {
+      "<cmd>lua require('fzf-lua').grep_visual()<CR>", "grep search", { silent = true }
     },
   }
 }

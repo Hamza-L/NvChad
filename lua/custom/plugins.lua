@@ -3,6 +3,29 @@ local plugins = {
     "vim-cool"
   },
   {
+    "cdelledonne/vim-cmake"
+  },
+  {
+    "junegunn/fzf", build = "./install --bin"  
+  },
+  {
+    "ibhagwan/fzf-lua",
+    -- optional for icon support
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      -- calling `setup` is optional for customization
+      require("fzf-lua").setup({
+        winopts = {
+          preview = {
+            border = "border",
+            layout = "vertical",
+            vertical = "up:75%",
+          },
+        },
+})
+    end
+  },
+  {
     "jose-elias-alvarez/null-ls.nvim",
     event = "VeryLazy",
     opts = function ()
@@ -52,7 +75,7 @@ local plugins = {
       end
       dap.listeners.before.event_exited.dapui_config = function()
         dapui.close()
-      end    
+      end
     end,
 
   },
