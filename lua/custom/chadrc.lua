@@ -66,6 +66,11 @@ M.ui = {
   },
   hl_override = {
     NvDashAscii = {bg = "NONE" , fg = "blue"},
+    vim.api.nvim_set_hl(0, "@preproc", { fg = "#de9b5d" }),
+    vim.api.nvim_set_hl(0, "@define", { fg = "#de9b5d" }),
+    vim.api.nvim_set_hl(0, "@include", { fg = "#de9b5d" }),
+    vim.api.nvim_set_hl(0, "@parameter", { fg = "#ffffff" }),
+    vim.api.nvim_set_hl(0, "@namespace", { fg = "#d17176" }),
   }
 }
 

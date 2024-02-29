@@ -73,6 +73,9 @@ M.doomKeyMaps= {
     ["<leader>pf"] = {
       "<cmd>lua require('fzf-lua').files()<CR>", "fzf search", { silent = true }
     },
+    ["<leader>po"] = {
+      "<cmd>ClangdSwitchSourceHeader<CR>", "switch to header/source", { silent = true }
+    },
     ["<leader>/"] = {
       "<cmd>lua require('fzf-lua').live_grep()<CR>", "grep search", { silent = true }
     },

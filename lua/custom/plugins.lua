@@ -1,5 +1,19 @@
 local plugins = {
   {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = { "lua", "vim", "vimdoc", "cpp", "glsl", "json", "cmake" },
+    },
+  },
+  {
+    'HiPhish/rainbow-delimiters.nvim',
+    event = "VeryLazy"
+  },
+  {
+    'nvim-treesitter/playground',
+    event = "VeryLazy"
+  },
+  {
     "vim-cool"
   },
   {
@@ -27,14 +41,14 @@ local plugins = {
             vertical = "up:75%",
           },
         },
-})
+      })
     end
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
     event = "VeryLazy",
     opts = function ()
-    return require "custom.configs.null-ls"
+      return require "custom.configs.null-ls"
     end,
   },
   {
@@ -53,6 +67,13 @@ local plugins = {
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end,
+    opts = {
+      setup = {
+        clangd = function(_, opts)
+          opts.capabilities.offsetEncoding = { "utf-16" }
+        end,
+      },
+  },
   },
   {
     "mfussenegger/nvim-dap",
