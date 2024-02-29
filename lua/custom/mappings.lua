@@ -63,11 +63,11 @@ M.doomKeyMaps= {
       "window close"
     },
     ["<leader>ws"] = {
-      "<C-w>ws",
+      "<cmd>split<CR>",
       "window split horizontal"
     },
     ["<leader>wv"] = {
-      "<C-w>wv",
+      "<cmd>vsplit<CR>",
       "window split vertically"
     },
     ["<leader>pf"] = {
@@ -78,6 +78,9 @@ M.doomKeyMaps= {
     },
     ["<leader>r"] = {
       "<cmd>lua require('fzf-lua').lsp_references()<CR>", "lsp - reference search", { silent = true }
+    },
+    ["<leader>si"] = {
+      "<cmd>lua require('fzf-lua').lsp_document_symbols()<CR>", "lsp - symbols", { silent = true }
     },
   },
   v = {

@@ -3,7 +3,12 @@ local plugins = {
     "vim-cool"
   },
   {
-    "cdelledonne/vim-cmake"
+    "cdelledonne/vim-cmake",
+    event = "VeryLazy",
+  },
+  {
+    "liuchengxu/vista.vim",
+    event = "VeryLazy",
   },
   {
     "junegunn/fzf", build = "./install --bin"  
