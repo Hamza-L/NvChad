@@ -2,7 +2,7 @@
 local M = {}
 
 M.ui = { 
-  theme = 'chocolate',
+  theme = 'kanagawa',
 
   statusline = {
     overriden_modules = function(modules)

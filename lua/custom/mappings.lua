@@ -7,6 +7,9 @@ M.disabled = {
     ["<leader>rh"] = "", -- reset hunk
     ["<leader>rn"] = "", -- toggle relative number 
     ["<leader>/"] = "", -- comment line 
+    ["<C-n>"] = "", -- show file tree
+    ["<leader>b"] = "", -- new buffer 
+    ["<leader>x"] = "", -- close buffer 
   }
 }
 
@@ -87,6 +90,18 @@ M.doomKeyMaps= {
     },
     ["<leader>si"] = {
       "<cmd>lua require('fzf-lua').lsp_document_symbols()<CR>", "lsp - symbols", { silent = true }
+    },
+    ["<leader>bk"] = {
+      function()
+        require("nvchad.tabufline").close_buffer()
+      end,
+      "Close buffer",
+    },
+    ["<leader>x"] = {
+       "<cmd> enew <CR>", "New buffer"
+    },
+    ["<leader>op"] = {
+      "<cmd>NvimTreeToggle<CR>", "File Tree",
     },
   },
   v = {

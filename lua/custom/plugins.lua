@@ -16,7 +16,31 @@ local plugins = {
   },
   {
     'HiPhish/rainbow-delimiters.nvim',
-    event = "VeryLazy"
+    event = "VeryLazy",
+    config = function()
+      -- calling `setup` is optional for customization
+      require('rainbow-delimiters.setup').setup({
+        highlight = {
+          'RainbowDelimiterYellow',
+          'RainbowDelimiterBlue',
+          'RainbowDelimiterOrange',
+          'RainbowDelimiterGreen',
+          'RainbowDelimiterViolet',
+          'RainbowDelimiterCyan',
+          'RainbowDelimiterRed',
+        },     
+      })
+    end
+  },
+  {
+    "ahmedkhalf/project.nvim",
+    config = function()
+      require("project_nvim").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
   },
   {
     'nvim-treesitter/playground',
@@ -32,10 +56,6 @@ local plugins = {
   {
     "liuchengxu/vista.vim",
     event = "VeryLazy",
-  },
-  {
-    'charludo/projectmgr.nvim',
-    lazy = false, -- important!
   },
   {
     "junegunn/fzf", build = "./install --bin"  
