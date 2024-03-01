@@ -76,6 +76,9 @@ M.doomKeyMaps= {
     ["<leader>po"] = {
       "<cmd>ClangdSwitchSourceHeader<CR>", "switch to header/source", { silent = true }
     },
+    ["<leader>pp"] = {
+      "<cmd>ProjectMgr<CR>", "Project Manager", { silent = true }
+    },
     ["<leader>/"] = {
       "<cmd>lua require('fzf-lua').live_grep()<CR>", "grep search", { silent = true }
     },

@@ -3,6 +3,15 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = { "lua", "vim", "vimdoc", "cpp", "glsl", "json", "cmake" },
+      highlight = {
+        vim.api.nvim_set_hl(0, "@preproc", { fg = "#de9b5d", bold = true , italic = true }),
+        vim.api.nvim_set_hl(0, "@define", { fg = "#de9b5d", bold = true , italic = true }),
+        vim.api.nvim_set_hl(0, "@include", { fg = "#de9b5d", bold = true , italic = true}),
+        vim.api.nvim_set_hl(0, "@parameter", { fg = "#ffffff" }),
+        vim.api.nvim_set_hl(0, "@namespace", { fg = "#d1866d" }),
+        vim.api.nvim_set_hl(0, "@storageclass", { fg = "#9480b4" }),
+        vim.api.nvim_set_hl(0, "@type.builtin", { fg = "#9480b4" }),
+      },
     },
   },
   {
@@ -23,6 +32,10 @@ local plugins = {
   {
     "liuchengxu/vista.vim",
     event = "VeryLazy",
+  },
+  {
+    'charludo/projectmgr.nvim',
+    lazy = false, -- important!
   },
   {
     "junegunn/fzf", build = "./install --bin"  
@@ -67,13 +80,6 @@ local plugins = {
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end,
-    opts = {
-      setup = {
-        clangd = function(_, opts)
-          opts.capabilities.offsetEncoding = { "utf-16" }
-        end,
-      },
-  },
   },
   {
     "mfussenegger/nvim-dap",

@@ -2,7 +2,7 @@
 local M = {}
 
 M.ui = { 
-  theme = 'kanagawa',
+  theme = 'chocolate',
 
   statusline = {
     overriden_modules = function(modules)
@@ -57,8 +57,8 @@ M.ui = {
 
     buttons = {
       { "  Find File", "Spc p f", "fzf find files" },
+      { "  Project Manager", "Spc p p", "Open Project Manager" },
       { "󰈚  Recent Files", "Spc f o", "Telescope oldfiles" },
-      { "󰈭  Find Word", "Spc f w", "Telescope live_grep" },
       { "  Bookmarks", "Spc m a", "Telescope marks" },
       { "  Themes", "Spc t h", "Telescope themes" },
       { "  Mappings", "Spc c h", "NvCheatsheet" },
