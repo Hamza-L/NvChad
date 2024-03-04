@@ -106,9 +106,6 @@ M.doomKeyMaps= {
     ["<leader>op"] = {
       "<cmd>NvimTreeToggle<CR>", "File Tree",
     },
-    ["<leader>fe"] = {
-      "<cmd>Telescope file_browser<CR>", "File Tree",
-    },
   },
   v = {
     ["<leader>/"] = {

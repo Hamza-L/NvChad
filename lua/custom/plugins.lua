@@ -51,30 +51,6 @@ local plugins = {
     "nvim-telescope/telescope-file-browser.nvim",
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
   },
-  {"nvim-telescope/telescope.nvim",
-    extensions = {
-      file_browser = {
-        depth = false,
-        hide_parent_dir = true,
-      },
-    },
-    mappings = {
-      n = { 
-        ["q"] = require("telescope.actions").close
-      },
-      i = {
-        ["<C-j>"] = require("telescope.actions").move_selection_next,
-        ["<C-k>"] = require("telescope.actions").move_selection_previous,
-
-        ["K"] = require("telescope.actions").preview_scrolling_up,
-        ["J"] = require("telescope.actions").preview_scrolling_down,
-        ["H"] = require("telescope.actions").preview_scrolling_left,
-        ["L"] = require("telescope.actions").preview_scrolling_right,
-
-         
-      }
-    },
-  },
   {
     "junegunn/fzf", build = "./install --bin"  
   },
