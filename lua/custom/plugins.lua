@@ -33,16 +33,6 @@ local plugins = {
     end
   },
   {
-    "ahmedkhalf/project.nvim",
-    config = function()
-      require("project_nvim").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
-    end
-  },
-  {
     'nvim-treesitter/playground',
     event = "VeryLazy"
   },
@@ -56,6 +46,34 @@ local plugins = {
   {
     "liuchengxu/vista.vim",
     event = "VeryLazy",
+  },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+  },
+  {"nvim-telescope/telescope.nvim",
+    extensions = {
+      file_browser = {
+        depth = false,
+        hide_parent_dir = true,
+      },
+    },
+    mappings = {
+      n = { 
+        ["q"] = require("telescope.actions").close
+      },
+      i = {
+        ["<C-j>"] = require("telescope.actions").move_selection_next,
+        ["<C-k>"] = require("telescope.actions").move_selection_previous,
+
+        ["K"] = require("telescope.actions").preview_scrolling_up,
+        ["J"] = require("telescope.actions").preview_scrolling_down,
+        ["H"] = require("telescope.actions").preview_scrolling_left,
+        ["L"] = require("telescope.actions").preview_scrolling_right,
+
+         
+      }
+    },
   },
   {
     "junegunn/fzf", build = "./install --bin"  
@@ -73,7 +91,15 @@ local plugins = {
             layout = "vertical",
             vertical = "up:75%",
           },
+          on_create = function()
+            -- called once upon creation of the fzf main window
+            -- can be used to add custom fzf-lua mappings, e.g:
+            vim.keymap.set("t", "<tab>", "<cmd>FzfLua complete_path<CR>", {})
+         end,
         },
+        keymap = {
+
+        }
       })
     end
   },

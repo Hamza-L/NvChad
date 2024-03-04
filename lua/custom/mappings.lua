@@ -79,8 +79,11 @@ M.doomKeyMaps= {
     ["<leader>po"] = {
       "<cmd>ClangdSwitchSourceHeader<CR>", "switch to header/source", { silent = true }
     },
+    ["<leader>pa"] = {
+      "<cmd>lua require('projections.workspace').add(vim.loop.cwd())<CR>", "switch to header/source", { silent = true }
+    },
     ["<leader>pp"] = {
-      "<cmd>ProjectMgr<CR>", "Project Manager", { silent = true }
+      "<cmd>Telescope file_browser<CR>", "Project Manager", { silent = true }
     },
     ["<leader>/"] = {
       "<cmd>lua require('fzf-lua').live_grep()<CR>", "grep search", { silent = true }
@@ -102,6 +105,9 @@ M.doomKeyMaps= {
     },
     ["<leader>op"] = {
       "<cmd>NvimTreeToggle<CR>", "File Tree",
+    },
+    ["<leader>fe"] = {
+      "<cmd>Telescope file_browser<CR>", "File Tree",
     },
   },
   v = {
