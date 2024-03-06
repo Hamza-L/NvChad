@@ -10,6 +10,7 @@ M.disabled = {
     ["<C-n>"] = "", -- show file tree
     ["<leader>b"] = "", -- new buffer 
     ["<leader>x"] = "", -- close buffer 
+    ["<leader>fw"] = "", -- find word grep buffer 
   }
 }
 
@@ -72,6 +73,12 @@ M.doomKeyMaps= {
     ["<leader>wv"] = {
       "<cmd>vsplit<CR>",
       "window split vertically"
+    },
+    ["<leader>fw"] = {
+      "<cmd>lua require('fzf-lua').lgrep_curbuf()<CR>", "fzf search", { silent = true }
+    },
+    ["<leader>fl"] = {
+      "<cmd>lua require('fzf-lua').grep_last()<CR>", "fzf search", { silent = true }
     },
     ["<leader>pf"] = {
       "<cmd>lua require('fzf-lua').files()<CR>", "fzf search", { silent = true }

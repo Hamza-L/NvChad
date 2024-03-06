@@ -2,7 +2,7 @@ local plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
-      ensure_installed = { "lua", "vim", "vimdoc", "cpp", "glsl", "json", "cmake" },
+      ensure_installed = { "objc", "lua", "vim", "vimdoc", "cpp", "glsl", "json", "cmake" },
       highlight = {
         vim.api.nvim_set_hl(0, "@preproc", { fg = "#de9b5d", bold = true , italic = true }),
         vim.api.nvim_set_hl(0, "@define", { fg = "#de9b5d", bold = true , italic = true }),
@@ -35,6 +35,16 @@ local plugins = {
   {
     'nvim-treesitter/playground',
     event = "VeryLazy"
+  },
+  {
+    'rmagatti/auto-session',
+    event = "VeryLazy",
+    config = function()
+      require("auto-session").setup {
+        log_level = "error",
+        auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/"},
+      }
+    end
   },
   {
     "vim-cool"
@@ -70,8 +80,7 @@ local plugins = {
           on_create = function()
             -- called once upon creation of the fzf main window
             -- can be used to add custom fzf-lua mappings, e.g:
-            vim.keymap.set("t", "<tab>", "<cmd>FzfLua complete_path<CR>", {})
-         end,
+          end,
         },
         keymap = {
 
