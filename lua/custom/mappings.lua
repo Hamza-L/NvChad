@@ -110,6 +110,15 @@ M.doomKeyMaps= {
     ["<leader>x"] = {
        "<cmd> enew <CR>", "New buffer"
     },
+    ["<leader>pb"] = {
+      "<cmd>CMakeBuild<CR>", "CMake Build Project",
+    },
+    ["<leader>pg"] = {
+      "<cmd>CMakeGenerate<CR>", "CMake Generate Project",
+    },
+    ["<leader>pr"] = {
+      ":CMakeRun ", "CMake Run Project",
+    },
     ["<leader>op"] = {
       "<cmd>NvimTreeToggle<CR>", "File Tree",
     },
