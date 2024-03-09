@@ -122,10 +122,19 @@ M.doomKeyMaps= {
     ["<leader>op"] = {
       "<cmd>NvimTreeToggle<CR>", "File Tree",
     },
+    ["<leader>sr"] = {
+      "<cmd>SessionRestore<CR>", "Session Restore",
+    },
+    ["<leader>ss"] = {
+      "<cmd>SessionRestore<CR>", "Session Save",
+    },
   },
   v = {
     ["<leader>/"] = {
       "<cmd>lua require('fzf-lua').grep_visual()<CR>", "grep search", { silent = true }
+    },
+    ["<leader>fw"] = {
+      "<cmd>lua require('fzf-lua').lgrep_curbuf()<CR>", "fzf search", { silent = true }
     },
   }
 }

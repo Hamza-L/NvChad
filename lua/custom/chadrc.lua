@@ -57,8 +57,8 @@ M.ui = {
 
     buttons = {
       { "  Find File", "Spc p f", "fzf find files" },
-      { "  Project Manager", "Spc p p", "Open Project Manager" },
-      { "󰈚  Recent Files", "Spc f o", "Telescope oldfiles" },
+      { "  Project Manager", "Spc p p", "Open file navigator" },
+      { "󰈚  Recent Files", "Spc s r", "Restore Session" },
       { "  Bookmarks", "Spc m a", "Telescope marks" },
       { "  Themes", "Spc t h", "Telescope themes" },
       { "  Mappings", "Spc c h", "NvCheatsheet" },
