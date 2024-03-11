@@ -71,6 +71,7 @@ local plugins = {
     event = "VeryLazy",
     config = function()
       vim.g.cmake_link_compile_commands = 1
+      vim.g.cmake_generate_options = {"-G Ninja"};
     end
   },
   {
@@ -110,13 +111,6 @@ local plugins = {
         }
       })
     end
-  },
-  {
-    "jose-elias-alvarez/null-ls.nvim",
-    event = "VeryLazy",
-    opts = function ()
-      return require "custom.configs.null-ls"
-    end,
   },
   {
     "williamboman/mason.nvim",

@@ -22,3 +22,8 @@ require "plugins"
 
 vim.o.number = true
 vim.o.relativenumber = true
+
+if vim.g.neovide then
+    -- Put anything you want to happen only in Neovide here
+ vim.o.guifont = "CaskaydiaCove Nerd Font:h14" -- text below applies for VimScript
+end
