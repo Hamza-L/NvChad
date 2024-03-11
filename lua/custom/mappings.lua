@@ -126,7 +126,17 @@ M.doomKeyMaps= {
       "<cmd>SessionRestore<CR>", "Session Restore",
     },
     ["<leader>ss"] = {
-      "<cmd>SessionRestore<CR>", "Session Save",
+      "<cmd>SessionSave<CR>", "Session Save",
+    },
+    ["gj"] = {
+      function()
+        vim.lsp.buf.declaration()
+      end,
+      "LSP declaration",
+    },
+    ["<leader>j"] = {
+      "<cmd>FzfLua jumps<CR>",
+      "fzf jumps",
     },
   },
   v = {
