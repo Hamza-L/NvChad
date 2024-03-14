@@ -67,15 +67,11 @@ local plugins = {
     end
   },
   {
-    "cdelledonne/vim-cmake",
-    event = "VeryLazy",
-    config = function()
-      vim.g.cmake_link_compile_commands = 1
-      vim.g.cmake_generate_options = {"-G Ninja"};
-    end
+    "vim-cool"
   },
   {
-    "vim-cool"
+    'Shatur/neovim-cmake',
+    event = "VeryLazy",
   },
   {
     "liuchengxu/vista.vim",
