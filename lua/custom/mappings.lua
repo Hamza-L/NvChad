@@ -144,7 +144,7 @@ M.doomKeyMaps= {
       "<cmd>lua require('fzf-lua').grep_visual()<CR>", "grep search", { silent = true }
     },
     ["<leader>fw"] = {
-      "<cmd>lua require('fzf-lua').lgrep_curbuf()<CR>", "fzf search", { silent = true }
+      "<cmd>lua require('fzf-lua').grep_visual_curbuf()<CR>", "fzf search", { silent = true }
     },
   }
 }
