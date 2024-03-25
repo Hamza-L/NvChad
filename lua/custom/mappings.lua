@@ -110,14 +110,23 @@ M.doomKeyMaps= {
     ["<leader>x"] = {
        "<cmd> enew <CR>", "New buffer"
     },
-    ["<leader>pb"] = {
+    ["<leader>pc"] = {
       "<cmd>CMakeBuild<CR>", "CMake Build Project",
     },
-    ["<leader>pg"] = {
-      "<cmd>CMakeGenerate<CR>", "CMake Generate Project",
+    ["<leader>pk"] = {
+      "<cmd>:FZFCMakeSelectKit<CR>", "CMake select kit",
+    },
+    ["<leader>pd"] = {
+      "<cmd>:FZFCMakeSelectBuildType<CR>", "CMake select target",
+    },
+    ["<leader>pt"] = {
+      "<cmd>:FZFCMakeSelectTarget<CR>", "CMake select target",
+    },
+    ["<leader>pwg"] = {
+      '<cmd>CMake<CR>', "CMake Generate Project",
     },
     ["<leader>pr"] = {
-      ":CMakeRun ", "CMake Run Project",
+      "<cmd>CMakeRun!<CR>", "CMake Run Project",
     },
     ["<leader>op"] = {
       "<cmd>NvimTreeToggle<CR>", "File Tree",

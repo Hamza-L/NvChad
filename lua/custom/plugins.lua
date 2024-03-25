@@ -15,6 +15,13 @@ local plugins = {
     },
   },
   {
+    "nvim-neotest/nvim-nio"
+  },
+  {
+    "RRethy/vim-illuminate",
+    event = "VeryLazy"
+  },
+  {
     "nvim-treesitter/nvim-treesitter-context",
     event = "VeryLazy",
     config = function ()
@@ -53,7 +60,11 @@ local plugins = {
     end
   },
   {
-    'nvim-treesitter/playground',
+    'ilyachur/cmake4vim',
+    event = "VeryLazy"
+  },
+  {
+    'SantinoKeupp/lualine-cmake4vim.nvim',
     event = "VeryLazy"
   },
   {
@@ -70,7 +81,7 @@ local plugins = {
     "vim-cool"
   },
   {
-    'Shatur/neovim-cmake',
+    'Shatur/neovim-tasks',
     event = "VeryLazy",
   },
   {
@@ -82,12 +93,14 @@ local plugins = {
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
   },
   {
-    "junegunn/fzf", build = "./install --bin"  
+    "junegunn/fzf", build = "./install --bin",
+    lazy = false,
   },
   {
-    "ibhagwan/fzf-lua",
+    "Hamza-L/fzf-lua",
     -- optional for icon support
     dependencies = { "nvim-tree/nvim-web-devicons" },
+    lazy = false,
     config = function()
       -- calling `setup` is optional for customization
       require("fzf-lua").setup({
